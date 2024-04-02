@@ -1,5 +1,3 @@
-require("core.utils").load_config()
-
 local o = vim.opt
 local g = vim.g
 
@@ -37,7 +35,7 @@ o.showmode = false
 o.clipboard = "unnamedplus"
 
 -- Highlights the current cursor line for visual clarity.
-o.cursorline = true
+o.cursorline = false
 
 -- Makes in-editor searches case-insensitive.
 o.ignorecase = true
@@ -80,15 +78,3 @@ o.updatetime = 250
 
 -- Enables cursor movement to wrap to the previous/next line when reaching the beginning/end of a line. Includes h, l, and arrow keys.
 o.whichwrap:append "<>[]hl"
-
--- Adds the Mason.nvim binary directory to your PATH environment variable.
--- This enables the execution of tools installed using Mason from inside Neovim.
-local function get_path_separator()
-  if vim.loop.os_uname().sysname == "Windows_NT" then
-    return ";"
-  else
-    return ":"
-  end
-end
-
-vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. get_path_separator() .. vim.env.PATH
