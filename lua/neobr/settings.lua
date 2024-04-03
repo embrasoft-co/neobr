@@ -4,6 +4,9 @@ local g = vim.g
 -- Sets the leader key to the space bar. Leader key combinations are used to execute custom commands or mappings for efficiency.
 g.mapleader = " "
 
+-- No wrap lines
+o.wrap = false
+
 -- Replaces tab characters with spaces for consistent indentation.
 o.expandtab = true
 
