@@ -17,6 +17,7 @@ return {
         markdown = { "markdownlint" },
         lua = { "stylua" },
         go = { "gofumpt", "goimports" },
+        robot = { "robotframework_ls" },
       },
     }
   end,

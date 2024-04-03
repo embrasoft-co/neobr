@@ -31,6 +31,8 @@ return {
         "tailwindcss",
         "vimls",
         "tsserver",
+        "robotframework_ls",
+        "pylsp",
 
         -- Linters
         "golangci-lint",

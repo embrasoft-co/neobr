@@ -39,6 +39,7 @@ return {
       "cssls",
       "html",
       "jsonls",
+      "pylsp",
     }
 
     for _, server in ipairs(simple_servers) do
@@ -46,6 +47,26 @@ return {
         capabilities = capabilities,
       }
     end
+
+    -- Robot Framework
+    lspconfig.robotframework_ls.setup {
+      config = {
+        filetypes = { "robot", "resource" },
+      },
+      settings = {
+        robot = {
+          python = {
+            executable = "/usr/bin/python3",
+          },
+          lint = {
+            undefinedLibraries = true,
+            robocop = {
+              enabled = true,
+            },
+          },
+        },
+      },
+    }
 
     -- Svelte
     lspconfig.svelte.setup {
